@@ -1,6 +1,6 @@
 {
-  "name": "strapieno/str-nightclub-review-model",
-  "homepage": "http://github.com/strapieno/str-nightclub-review-model.git",
+  "name": "strapieno/str-nightclub-review-api",
+  "homepage": "http://github.com/strapieno/str-nightclub-review-api.git",
   "require": {
     "php": ">=5.5.0",
     "zendframework/zend-modulemanager": "2.5.*",
