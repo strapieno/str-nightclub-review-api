@@ -14,6 +14,7 @@
     "matryoshka-model/mongo-wrapper": "0.8.*@dev",
     "matryoshka-model/zf2-matryoshka-module": "0.8.*@dev",
     "matryoshka-model/zf-apigility-matryoshka": "dev-develop",
+    "strapieno/str-nightclub-review-model": "dev-develop",
     "strapieno/str-nightclub-api": "dev-develop",
     "strapieno/str-nightclub-model": "dev-develop",
     "strapieno/str-user-model": "dev-develop",
@@ -36,6 +37,10 @@
     {
       "type": "vcs",
       "url": "git@github.com:matryoshka-model/zf-apigility-matryoshka"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:strapieno/str-nightclub-review-model.git"
     },
     {
       "type": "vcs",

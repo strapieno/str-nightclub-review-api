@@ -35,8 +35,8 @@ return [
     'matryoshka-apigility' => [
         'matryoshka-connected' => [
             'Strapieno\NightClubReview\Api\V1\Rest\ConnectedResource' => [
-                'model' => 'Strapieno\NightClubReview\Model\NightClubReviewModelService',
-                'collection_criteria' => 'Strapieno\NightClubReview\Model\Criteria\NightClubReviewCollectionCriteria',
+                'model' => 'Strapieno\NightClubReview\Model\ReviewModelService',
+                'collection_criteria' => 'Strapieno\NightClubReview\Model\Criteria\ReviewCollectionCriteria',
                 'entity_criteria' => 'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria'
             ]
         ]
