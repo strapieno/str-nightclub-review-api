@@ -37,7 +37,8 @@ return [
             'Strapieno\NightClubReview\Api\V1\Rest\ConnectedResource' => [
                 'model' => 'Strapieno\NightClubReview\Model\ReviewModelService',
                 'collection_criteria' => 'Strapieno\NightClubReview\Model\Criteria\ReviewCollectionCriteria',
-                'entity_criteria' => 'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria'
+                'entity_criteria' => 'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria',
+                'hydrator' => 'NightClubReviewApiHydrator'
             ]
         ]
     ],
@@ -91,7 +92,6 @@ return [
     'zf-content-validation' => [
         'Strapieno\NightClubReview\Api\V1\Rest\Controller' => [
             'input_filter' => 'Strapieno\NightClubReview\Model\InputFilter\DefaultInputFilter',
-            'POST' => 'Strapieno\NightClubReview\Model\InputFilter\CreateInputFilter'
         ]
     ]
 ];
