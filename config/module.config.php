@@ -11,6 +11,27 @@ return [
             'listenerManager' => 'Strapieno\Utils\Listener\ListenerManager'
         ]
     ],
+    'service-listeners' => [
+        'initializers' => [
+            'Strapieno\NightClub\Model\NightClubModelInizializer'
+        ],
+        'invokables' => [
+            'Strapieno\NightClubReview\Api\V1\Listener\NightClubRestListener'
+            => 'Strapieno\NightClubReview\Api\V1\Listener\NightClubRestListener'
+        ]
+    ],
+    'attach-listeners' => [
+        'Strapieno\NightClubReview\Api\V1\Rest\Controller' => [
+            'Strapieno\NightClubReview\Api\V1\Listener\NightClubRestListener'
+        ]
+    ],
+    'controllers' => [
+        'delegators' => [
+            'Strapieno\NightClubReview\Api\V1\Rest\Controller' => [
+                'Strapieno\Utils\Delegator\AttachListenerDelegator',
+            ]
+        ],
+    ],
     'router' => [
         'routes' => [
             'api-rest' => [
@@ -81,7 +102,7 @@ return [
     'zf-hal' => [
         // map each class (by name) to their metadata mappings
         'metadata_map' => [
-            'Strapieno\NightClubReview\Model\Entity\NightClubReviewEntity' => [
+            'Strapieno\NightClubReview\Model\Entity\ReviewEntity' => [
                 'entity_identifier_name' => 'id',
                 'route_name' => 'api-rest/nightclub/review',
                 'route_identifier_name' => 'nightclub_review_id',
