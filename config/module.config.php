@@ -41,9 +41,12 @@ return [
                             'review' => [
                                 'type' => 'Segment',
                                 'options' => [
-                                    'route' => '/review',
+                                    'route' => '/review[/:review_id]',
                                     'defaults' => [
                                         'controller' => 'Strapieno\NightClubReview\Api\V1\Rest\Controller'
+                                    ],
+                                    'constraints' => [
+                                        'review_id' => '[0-9a-f]{24}'
                                     ]
                                 ]
                             ]
@@ -68,7 +71,7 @@ return [
             'service_name' => 'nightclubReview',
             'listener' => 'Strapieno\NightClubReview\Api\V1\Rest\ConnectedResource',
             'route_name' => 'api-rest/nightclub/review',
-            'route_identifier_name' => 'nightclub_review_id',
+            'route_identifier_name' => 'review_id',
             'collection_name' => 'reviews',
             'entity_http_methods' => [
                 0 => 'GET',
@@ -105,7 +108,7 @@ return [
             'Strapieno\NightClubReview\Model\Entity\ReviewEntity' => [
                 'entity_identifier_name' => 'id',
                 'route_name' => 'api-rest/nightclub/review',
-                'route_identifier_name' => 'nightclub_review_id',
+                'route_identifier_name' => 'review_id',
                 'hydrator' => 'NightClubReviewApiHydrator',
             ],
         ],
