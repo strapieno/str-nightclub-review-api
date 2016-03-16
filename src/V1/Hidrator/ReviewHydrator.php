@@ -2,8 +2,11 @@
 namespace Strapieno\NightClubReview\Api\V1\Hydrator;
 
 use Matryoshka\Model\Hydrator\Strategy\HasOneStrategy;
+use Strapieno\NightClubReview\Model\Entity\Object\NightClubReferenceObject;
 use Strapieno\NightClubReview\Model\Entity\Object\RatingObject;
 use Strapieno\Utils\Hydrator\DateHystoryHydrator;
+use Strapieno\Utils\Hydrator\Strategy\NamingStrategy\MapUnderscoreNamingStrategy;
+use Strapieno\Utils\Hydrator\Strategy\ReferenceEntityCompressStrategy;
 
 
 /**
@@ -15,9 +18,16 @@ class ReviewHydrator extends DateHystoryHydrator
     {
         parent::__construct($underscoreSeparatedKeys);
 
+        $this->setNamingStrategy(new MapUnderscoreNamingStrategy(['nightclub_id' => 'nightClubReference']));
+
         $this->addStrategy(
             'rating',
             new HasOneStrategy(new RatingObject(), false)
+        );
+
+        $this->addStrategy(
+            'nightclub_id',
+            new ReferenceEntityCompressStrategy(new NightClubReferenceObject(), false)
         );
 
     }
