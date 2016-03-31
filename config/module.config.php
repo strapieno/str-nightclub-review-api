@@ -115,7 +115,29 @@ return [
     ],
     'zf-content-validation' => [
         'Strapieno\NightClubReview\Api\V1\Rest\Controller' => [
-            'input_filter' => 'Strapieno\NightClubReview\Model\InputFilter\DefaultInputFilter',
+            'input_filter' => 'Strapieno\NightClubReview\Api\InputFilter\DefaultInputFilter',
+            "rating_value" => [
+                'name' => 'rating_value',
+                'require' => true,
+                'allow_empty' => false
+            ]
+        ]
+    ],
+    'input_filter_specs' => [
+        'Strapieno\NightClubReview\Api\InputFilter\DefaultReviewInputFilter' => [
+            'merge' => 'Strapieno\NightClubReview\Model\InputFilter\DefaultReviewInputFilter',
+        ],
+        'Strapieno\NightClubReview\Api\InputFilter\DefaultInputFilter' => [
+            'merge' => 'Strapieno\NightClubReview\Model\InputFilter\DefaultReviewInputFilter',
+            "nightclub_id" => [
+                'name' => 'nightclub_id',
+                'require' => true,
+                'allow_empty' => false
+            ],
+            "rating" => [
+                'name' => 'rating',
+                'type' => 'Strapieno\NightClubReview\Api\InputFilter\DefaultReviewInputFilter',
+            ]
         ]
     ]
 ];
