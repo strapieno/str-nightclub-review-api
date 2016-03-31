@@ -132,7 +132,13 @@ return [
             "nightclub_id" => [
                 'name' => 'nightclub_id',
                 'require' => true,
-                'allow_empty' => false
+                'allow_empty' => false,
+                'validators' => [
+                    'nightclubentityexist' => [
+                        'name' => 'nightclubentityexist',
+                        'break_chain_on_failure' => true
+                    ]
+                ]
             ],
             "rating" => [
                 'name' => 'rating',
