@@ -123,7 +123,7 @@ return [
             ]
         ]
     ],
-    'input_filter_specs' => [
+    'strapieno_input_filter_specs' => [
         'Strapieno\NightClubReview\Api\InputFilter\DefaultReviewInputFilter' => [
             'merge' => 'Strapieno\NightClubReview\Model\InputFilter\DefaultReviewInputFilter',
         ],
