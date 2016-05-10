@@ -6,23 +6,6 @@ return [
             'nightclub_id'
         ]
     ],
-    'service-listeners' => [
-        'invokables' => [
-            'Strapieno\Utils\Listener\InjectRouteParamsInRequest' => 'Strapieno\Utils\Listener\InjectRouteParamsInRequest'
-        ]
-    ],
-    'attach-listeners' => [
-        'Application' => [
-            'Strapieno\Utils\Listener\InjectRouteParamsInRequest'
-        ]
-    ],
-    'service_manager' => [
-        'delegators' => [
-            'Application' => [
-                'Strapieno\Utils\Delegator\AttachListenerDelegator',
-            ]
-        ],
-    ],
     // Config of nightclub_id in route exist
     'nightclub-not-found' => [
         'api-rest/nightclub/review'
@@ -36,19 +19,27 @@ return [
         ],
         'aliases' => [
             'listenerManager' => 'Strapieno\Utils\Listener\ListenerManager'
-        ]
+        ],
+        // Config of nightclub_id in route exist
+        'delegators' => [
+            'Application' => [
+                'Strapieno\Utils\Delegator\AttachListenerDelegator',
+            ]
+        ],
     ],
-
     'service-listeners' => [
         'initializers' => [
             'Strapieno\NightClub\Model\NightClubModelInizializer'
         ],
         'invokables' => [
-            'Strapieno\NightClubReview\Api\V1\Listener\NightClubRestListener'
-            => 'Strapieno\NightClubReview\Api\V1\Listener\NightClubRestListener'
+            'Strapieno\Utils\Listener\InjectRouteParamsInRequest' => 'Strapieno\Utils\Listener\InjectRouteParamsInRequest',
+            'Strapieno\NightClubReview\Api\V1\Listener\NightClubRestListener' => 'Strapieno\NightClubReview\Api\V1\Listener\NightClubRestListener'
         ]
     ],
     'attach-listeners' => [
+        'Application' => [
+            'Strapieno\Utils\Listener\InjectRouteParamsInRequest'
+        ],
         'Strapieno\NightClubReview\Api\V1\Rest\Controller' => [
             'Strapieno\NightClubReview\Api\V1\Listener\NightClubRestListener'
         ]
