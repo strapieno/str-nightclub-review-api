@@ -126,7 +126,6 @@ return [
             'merge' => 'Strapieno\NightClubReview\Model\InputFilter\DefaultReviewInputFilter',
         ],
         'Strapieno\NightClubReview\Api\InputFilter\DefaultInputFilter' => [
-            'merge' => 'Strapieno\NightClubReview\Model\InputFilter\DefaultReviewInputFilter',
             "nightclub_id" => [
                 'name' => 'nightclub_id',
                 'require' => true,
