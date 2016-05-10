@@ -1,5 +1,8 @@
 <?php
 return [
+    'nightclub-not-found' => [
+        'api-rest/nightclub/review'
+    ],
     'service_manager' => [
         'factories' => [
             'Strapieno\Utils\Listener\ListenerManager' => 'Strapieno\Utils\Listener\ListenerManagerFactory'
@@ -116,11 +119,6 @@ return [
     'zf-content-validation' => [
         'Strapieno\NightClubReview\Api\V1\Rest\Controller' => [
             'input_filter' => 'Strapieno\NightClubReview\Api\InputFilter\DefaultInputFilter',
-            "rating_value" => [
-                'name' => 'rating_value',
-                'require' => true,
-                'allow_empty' => false
-            ]
         ]
     ],
     'strapieno_input_filter_specs' => [
@@ -132,13 +130,7 @@ return [
             "nightclub_id" => [
                 'name' => 'nightclub_id',
                 'require' => true,
-                'allow_empty' => false,
-                'validators' => [
-                    'nightclubentityexist' => [
-                        'name' => 'nightclubentityexist',
-                        'break_chain_on_failure' => true
-                    ]
-                ]
+                'allow_empty' => false
             ],
             "rating" => [
                 'name' => 'rating',
