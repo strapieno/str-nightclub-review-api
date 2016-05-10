@@ -1,5 +1,29 @@
 <?php
 return [
+    // Config of inject nightclub_id in body params
+    'inject-route-params' => [
+        'Strapieno\NightClubReview\Api\V1\Rest\Controller' => [
+            'nightclub_id'
+        ]
+    ],
+    'service-listeners' => [
+        'invokables' => [
+            'Strapieno\Utils\Listener\InjectRouteParamsInRequest' => 'Strapieno\Utils\Listener\InjectRouteParamsInRequest'
+        ]
+    ],
+    'attach-listeners' => [
+        'Application' => [
+            'Strapieno\Utils\Listener\InjectRouteParamsInRequest'
+        ]
+    ],
+    'service_manager' => [
+        'delegators' => [
+            'Application' => [
+                'Strapieno\Utils\Delegator\AttachListenerDelegator',
+            ]
+        ],
+    ],
+    // Config of nightclub_id in route exist
     'nightclub-not-found' => [
         'api-rest/nightclub/review'
     ],
@@ -14,6 +38,7 @@ return [
             'listenerManager' => 'Strapieno\Utils\Listener\ListenerManager'
         ]
     ],
+
     'service-listeners' => [
         'initializers' => [
             'Strapieno\NightClub\Model\NightClubModelInizializer'
