@@ -148,6 +148,11 @@ return [
                 'require' => true,
                 'allow_empty' => false
             ],
+            'review_body',[
+                'name' => 'review_body',
+                'require' => true,
+                'allow_empty' => false
+            ],
             "rating" => [
                 'name' => 'rating',
                 'type' => 'Strapieno\NightClubReview\Api\InputFilter\DefaultReviewInputFilter',
