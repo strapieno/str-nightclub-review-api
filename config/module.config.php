@@ -102,7 +102,9 @@ return [
                 0 => 'GET',
                 1 => 'POST',
             ],
-            'collection_query_whitelist' => [],
+            'collection_query_whitelist' => [
+                'place_id'
+            ],
             'page_size' => 10,
             'page_size_param' => 'page_size',
             'collection_class' => 'Zend\Paginator\Paginator', // FIXME function?

@@ -1,1 +1,1 @@
-# Strapieno nightclub model
+# Strapieno nightclub review api
