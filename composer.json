@@ -30,12 +30,6 @@
       "./Module.php"
     ]
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:matryoshka-model/zf-apigility-matryoshka"
-    }
-  ],
   "authors": [
     {
       "name": "Antonio Visalli",
